@@ -1,0 +1,67 @@
+{
+  "enable": {
+    "type": "bool",
+    "description": "总开关",
+    "default": true
+  },
+  "groups": {
+    "type": "list",
+    "description": "生效的群号或 umo，留空=所有群",
+    "default": []
+  },
+  "window_seconds": {
+    "type": "int",
+    "description": "bot 说完话后，多少秒内的群体发言才纳入判定",
+    "default": 120
+  },
+  "max_follow": {
+    "type": "int",
+    "description": "一个窗口内最多再看几条，超过就认为话题过去了",
+    "default": 2
+  },
+  "min_chars": {
+    "type": "int",
+    "description": "太短的不判（单字表情之类）",
+    "default": 1
+  },
+  "max_chars": {
+    "type": "int",
+    "description": "太长的多半是新话题，不判",
+    "default": 80
+  },
+  "require_signal": {
+    "type": "bool",
+    "description": "是否要求必须带指代词/疑问词才送判定（更省、更保守）",
+    "default": false
+  },
+  "signal_words": {
+    "type": "list",
+    "description": "指代词/疑问词表（require_signal 打开时用）",
+    "default": ["你", "这", "那", "吗", "呢", "刚刚", "刚才", "上面", "上面说"]
+  },
+  "skip_images": {
+    "type": "bool",
+    "description": "带图片的消息不判定（图片另有插件处理）",
+    "default": true
+  },
+  "probability": {
+    "type": "float",
+    "description": "判定 YES 之后真正接话的概率（1=必接）",
+    "default": 0.85
+  },
+  "judge_provider_id": {
+    "type": "string",
+    "description": "用来复判的模型，留空=当前默认提供商；建议用小模型控成本",
+    "default": "deepseek/deepseek-flash"
+  },
+  "judge_cooldown_seconds": {
+    "type": "int",
+    "description": "同一个群两次判定的最小间隔（秒），防止刷调用",
+    "default": 20
+  },
+  "judge_max_per_hour": {
+    "type": "int",
+    "description": "同一个群每小时最多判定几次（成本上限）",
+    "default": 60
+  }
+}

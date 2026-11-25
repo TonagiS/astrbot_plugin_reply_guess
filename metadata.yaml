@@ -1,0 +1,9 @@
+name: astrbot_plugin_reply_guess
+display_name: 无 @ 接话判定
+author: Tonagi
+desc: 群里没人 @、也没引用时，靠"对话窗口 + 规则粗筛 + 小模型复判"判断对方是不是在接着跟 bot 说话，是的话才接。默认偏向沉默。
+version: 1.0.0
+astrbot_version: ">=4.22.0"
+support_platforms:
+  - aiocqhttp
+repo: "https://github.com/TonagiS/astrbot_plugin_reply_guess"
